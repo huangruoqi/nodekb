@@ -7,7 +7,10 @@ const flash = require('connect-flash');
 const config = require('./config/database')
 const passport = require('passport');
 
-mongoose.connect(config.database);
+mongoose.connect(config.database, {
+    useNewUrlParser: true,
+    useUnifiedTopology:true
+});
 let db = mongoose.connection;
 
 // Check for DB errors

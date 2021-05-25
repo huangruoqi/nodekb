@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    form(method='POST', action='/articles/addRandom')
+        input.btn.btn-primary(type='submit',value='Random')
+    h1 #{something}
+    ul.list-group
+        each article, i in articles
+            li.list-group-item
+                a(href="/articles/"+article._id)= article.title

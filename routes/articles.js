@@ -92,7 +92,7 @@ router.post('/addRandom', (req, res) => {
 router.post('/edit/:id', (req, res) => {
     let article = {};
     article.title = req.body.title;
-    article.author = req.body.author;
+    article.author = req.params.id;
     article.body = req.body.body;
 
     let query = {_id:req.params.id};

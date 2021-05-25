@@ -132,8 +132,8 @@ router.get('/:id', (req, res)=> {
     Article.findById(req.params.id,(err, article)=> {
         User.findById(article.author, (err, user) => {
             res.render('article', {
-                article: user,
-                author: author.name || "Unknown",
+                article: article,
+                author: user.name || "Unknown",
                 pretty: true
             });
         })

@@ -131,9 +131,11 @@ router.delete('/:id', (req,res) => {
 router.get('/:id', (req, res)=> {
     Article.findById(req.params.id,(err, article)=> {
         User.findById(article.author, (err, aaa) => {
+            if (aaa.name) console.log(12312312);
+            else console.log(99999999);
             res.render('article', {
                 article: article,
-                author: aaa.name || "Unknown",
+                author: "Unknown",
                 pretty: true
             });
         })

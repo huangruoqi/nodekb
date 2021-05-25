@@ -130,10 +130,10 @@ router.delete('/:id', (req,res) => {
 // Get Single Article
 router.get('/:id', (req, res)=> {
     Article.findById(req.params.id,(err, article)=> {
-        User.findById(article.author, (err, user) => {
+        User.findById(article.author, (err, aaa) => {
             res.render('article', {
                 article: article,
-                author: user.name || "Unknown",
+                author: "Unknown",
                 pretty: true
             });
         })

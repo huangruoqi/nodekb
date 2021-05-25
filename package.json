@@ -4,7 +4,7 @@
   "description": "Node tutorial",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "postinstall": "bower cache clean && bower install"
   },
   "author": "Ruoqi Huang",

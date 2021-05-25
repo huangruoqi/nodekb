@@ -91,21 +91,23 @@ router.post('/addRandom', (req, res) => {
 // Add Edit POST Route
 router.post('/edit/:id', (req, res) => {
     let article = {};
-    article.title = req.body.title;
-    article.author = req.params.id;
-    article.body = req.body.body;
-
-    let query = {_id:req.params.id};
-    Article.update(query, article, (err) => {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        else {
-            req.flash('success', 'Article updated');
-            res.redirect('/');
-        }
+    Article.findById(req.params.id,(err, info)=> {
+        article.title = req.body.title;
+        article.author = info.author;
+        article.body = req.body.body;
+        let query = {_id:req.params.id};
+        Article.update(query, article, (err) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            else {
+                req.flash('success', 'Article updated');
+                res.redirect('/');
+            }
+        });
     });
+
 });
 
 // Delete request

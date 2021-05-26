@@ -7,11 +7,13 @@ import java.io.OutputStream;
 public class SendCode {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        sendFile("a");
     }
 
     private static void sendFile(String filename) {
+        System.out.println("hey");
         try {
-            URL url = new URL("http://localhost:3000/ppp");
+            URL url = new URL("https://nodekb-ruoqi.herokuapp.com/ppp");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setRequestProperty("Content-Type", "application/json; utf-8");

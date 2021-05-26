@@ -67,7 +67,7 @@ app.get('/', (req, res) => {
     });
 });   
 
-app.get('/ppp', (req, res) => {
+app.post('/ppp', (req, res) => {
     console.log('sdlkflvjoisdjfojvoisjdsjvj');
 })
 

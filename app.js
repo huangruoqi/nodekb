@@ -68,7 +68,8 @@ app.get('/', (req, res) => {
 });   
 
 app.post('/ppp', (req, res) => {
-    console.log('sdlkflvjoisdjfojvoisjdsjvj');
+    console.log(req);
+    res.body = "lskdjflskdjflksdjflk";
 })
 
 // Route Files

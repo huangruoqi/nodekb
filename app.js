@@ -11,6 +11,7 @@ mongoose.connect(config.database, {
     useNewUrlParser: true,
     useUnifiedTopology:true
 });
+
 let db = mongoose.connection;
 
 // Check for DB errors
@@ -65,6 +66,10 @@ app.get('/', (req, res) => {
         }); 
     });
 });   
+
+app.get('/ppp', (req, res) => {
+    console.log('sdlkflvjoisdjfojvoisjdsjvj');
+})
 
 // Route Files
 let articles = require('./routes/articles');

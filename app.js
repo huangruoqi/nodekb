@@ -69,7 +69,7 @@ app.get('/', (req, res) => {
 
 app.post('/ppp', (req, res) => {
     console.log(req.body.code);
-    res.body = "lskdjflskdjflksdjflk";
+    res.send("success");
 })
 
 // Route Files

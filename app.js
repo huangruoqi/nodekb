@@ -68,7 +68,7 @@ app.get('/', (req, res) => {
 });   
 
 app.post('/ppp', (req, res) => {
-    console.log(req);
+    console.log(req.body.code);
     res.body = "lskdjflskdjflksdjflk";
 })
 
